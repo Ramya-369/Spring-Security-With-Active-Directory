@@ -23,8 +23,8 @@ public class SecurityConfig {
                 .and()
                 // Configure authorization rules for specific endpoints
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/Imag").permitAll() // Permit access to "/Imag" endpoint
-                        .requestMatchers("/Jb Hunt", "/Logistics").authenticated() // Require authentication for "/Jb Hunt" and "/Logistics" endpoints
+                        .requestMatchers("/imag").permitAll() // Permit access to "/Imag" endpoint
+                        .requestMatchers("/jbhunt", "/logistics").authenticated() // Require authentication for "/Jb Hunt" and "/Logistics" endpoints
                         .requestMatchers("/**").permitAll()) // Permit access to all other endpoints
                 // Configure OAuth2 resource server with JWT authentication
                 .oauth2ResourceServer(t -> t.jwt(Configurer -> Configurer.jwtAuthenticationConverter(jwtAuthConverter))).build();
